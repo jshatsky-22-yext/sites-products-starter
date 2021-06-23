@@ -9,7 +9,14 @@
         "uid",
         "name",
         "slug",
-        "richTextDescription"
+        "richTextDescription",
+        "c_relatedProducts.name",
+        "c_relatedProducts.slug",
+        "c_relatedProducts.photoGallery",
+        "c_relatedProducts.brand",
+        "c_relatedProducts.price",
+        "c_relatedProducts.color",
+        "c_relatedProducts.richTextDescription"    
       ],
       "filter": {
         "entityTypes": [
@@ -43,9 +50,39 @@
     {{>navbar}}
 
 
-    <div class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-600 text-4xl mb-8 pt-6">
-        THIS PAGE IS EMPTY 
+    <div class="container py-8 px-6 mx-auto">
+      <div class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-2xl mb-8">{{name}}</div>
+      <p class="mt-8 mb-8">{{richTextDescription}}</p>
     </div>
+ 
+    {{#each c_relatedProducts}}
+      <div class="grid grid-cols-7 divide-gray-300 divide-y-4 gap-3 pl-10">
+          <div class="col-span-2">
+              <div class="w-full md:w-full lg:scale-80 p-6 flex flex-col space-y-6">
+                  {{>photoGallery photoGallery}}
+              </div>
+          </div>
+ 
+          <div class="col-span-5">
+              <div class="container py-8 px-6 mx-auto">
+                  <div>
+                    <a class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-2xl mb-8 hover:text-blue-900" href={{slug}}>{{name}}</a>
+                  </div>
+                  <div class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-600 text-xl mb-8 pt-6">
+                      {{brand}} 
+                  </div>
+                  <div class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-400 text-xl mb-8">
+                      ${{price.value}} 
+                  </div>
+                  <p class="mt-8 mb-8 text-l">{{richTextDescription}}</p>
+                  <p class="mt-8 text-l"><b>Color:</b> {{color}}</p>
+              </div>
+          </div>
+      </div>
+    {{/each}}
+ 
+
+
 
 
     </body> 

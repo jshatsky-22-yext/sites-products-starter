@@ -1,23 +1,19 @@
 ---
 {
     "stream": {
-        "$id": "productReviews",
+        "$id": "locationReviews",
         "source": "knowledgeGraph",
         "destination": "pages",
       "fields": [
         "id",
         "uid",
-        "richTextDescription",
         "name",
         "slug",
-        "price",
-        "color",
-        "brand",
         "photoGallery"
       ],
       "filter": {
         "entityTypes": [
-          "product"
+          "location"
         ]
       }
     },
@@ -32,7 +28,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>{{name}}</title>
-    <meta name="description" content={{richTextDescription}}>
+    <meta name="description" content="This is a custom page for leaving reviews for locations">
     {{>head}}
     {{!-- <link href="https://unpkg.com/tailwindcss/dist/tailwind.min.css" rel="stylesheet"> --}}
     <!--Replace with your tailwind.css once created-->
@@ -59,27 +55,19 @@
         <div class="col-span-1">
             <div class="container py-8 px-6 mx-auto">
                 <div class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-4xl mb-8">
-                    Write a Review
+                    How was your experience at {{name}}?
                 </div>
-                <div class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-800 text-2xl mb-8">
-                    {{name}} 
-                </div>
-                <div class="uppercase tracking-wide no-underline hover:no-underline font-bold text-gray-600 text-1xl mb-8">
-                    {{brand}} 
-                </div>
-                <p class="mt-8 mb-8 text-xl">{{richTextDescription}}</p>
-                <p class="mt-8 text-xl"><b>Color:</b> {{color}}</p>
                 <div class="mt-8 mb-8 text-xl">
                     <label class="text-gray-700 font-bold text-xs mb-2" for="review-title">
                         Review Title (Optional)
                     </label>
-                    <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-300 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="review-title" type="text" placeholder="Love this hat!">
+                    <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="review-title" type="text" placeholder="Cool Store with Wide Selection of Streetwear">
                 </div>
                 <div class="mt-8 mb-8 text-xl">
                     <label class="text-gray-700 font-bold text-xs mb-2" for="review-rating">
                         Rate Your Item!
                     </label>
-                    <select class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-black-300 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="review-rating" placeholder="Input Rating">
+                    <select class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="review-rating" placeholder="Input Rating">
                         <option>Select a Rating</option>
                         <option>1</option>
                         <option>2</option>
@@ -90,9 +78,9 @@
                 </div>
                 <div class="mt-8 mb-8 text-xl">
                     <label class="text-gray-700 font-bold text-xs mb-2" for="review-text">
-                        Tell us what you thought of this product!
+                        Tell us what you thought of your experience!
                     </label>
-                    <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="review-text" type="text" placeholder="I really enjoyed this hat!">
+                    <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="review-text" type="text" placeholder="I had a wonderful time!">
                 </div>
                 <div class="mt-8 mb-8 text-xl">
                     <label class="text-gray-700 font-bold text-xs mb-2" for="reviewer-name">
@@ -104,17 +92,17 @@
                     <label class="text-gray-700 font-bold text-xs mb-2" for="reviewer-email">
                         Email Address
                     </label>
-                    <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="reviewer-email" type="text" placeholder="jshatsky@yext.com">
+                    <input class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="reviewer-email" type="text" placeholder="jesse@gmail.com">
                 </div>
                 <div class="mt-8 mb-8 text-xl">
                     <label class="text-gray-700 font-bold text-xs mb-2" for="size-selector">
-                        How was the fit?
+                        How could we improve the in-store experience?
                     </label>
                     <select class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-black-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500" id="size-selector" placeholder="How was the fit?">
                         <option>Select an Option</option>
-                        <option>Runs Small</option>
-                        <option>True to Size</option>
-                        <option>Runs Large</option>
+                        <option>Wider Selection</option>
+                        <option>Better Service</option>
+                        <option>Shorter Wait Times</option>
                     </select>
                 </div>
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" id="submit-button" type="button">

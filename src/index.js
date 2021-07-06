@@ -1,6 +1,8 @@
 import './global.css';
 import axios from "axios";
 
+const API_KEY = "f7073c13332f894e01b07436f1bab2f3";
+
 function importAll(r) {
     let images = {};
     r.keys().map((item, index) => { images[item.replace('./', '')] = r(item); });
@@ -61,7 +63,7 @@ function makeRequestToCreateReview(review){
   const options = {
     method: 'POST',
     url: 'https://liveapi.yext.com/v2/accounts/me/reviewSubmission',
-    params: {api_key: '540aecd783a3b40d28829b2fa7d52881', v: '20210401'},
+    params: {api_key: API_KEY, v: '20210401'},
     headers: {'Content-Type': 'application/json'}
   };
   options.data = review;

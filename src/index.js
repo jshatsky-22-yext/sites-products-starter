@@ -1,14 +1,19 @@
 import './global.css';
 import axios from "axios";
 
+/* Jesse's Prod Account
 const API_KEY = "f7073c13332f894e01b07436f1bab2f3"; // prod
 const API_PATH = 'https://liveapi.yext.com/v2/accounts/me/reviewSubmission'; // prod
+*/
 
-/*
+/* Jesse's QA Account
 const API_KEY = "d1c315db5c0e3e73586da63e8dbdf7c8"; // QA
 const API_PATH = 'https://liveapi-qa.yext.com/v2/accounts/me/reviewSubmission'; // QA
 */
 
+// Aly's QA Account
+const API_KEY = "d6503f45eda9eb678975eb317eef746e";
+const API_PATH = 'https://liveapi-qa.yext.com/v2/accounts/me/reviewSubmission'; // QA
 
 
 
